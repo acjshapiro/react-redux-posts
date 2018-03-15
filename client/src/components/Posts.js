@@ -2,14 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getPosts } from '../actions/posts';
-import { Container, Header, Card } from 'semantic-ui-react';
+import { Container, Header, Card, Button } from 'semantic-ui-react';
+import PostForm from './PostForm';
 
 class Posts extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(getPosts())
-    }
+    
 
     posts = () => {
+        let { posts } = this.props;
+        let visible = posts;
+
         return this.props.posts.map( post =>
             <Card key={post.id} >
                
@@ -34,9 +36,13 @@ class Posts extends React.Component {
     }
 
     render() {
+        
         return(
             <Container>
                 <Header as="h3" textAlign="center"> POSTS</Header>
+                
+                <PostForm closeForm={this.toggleForm} />
+
                     <Card.Group itemsPerRow={4}>
                         {this.posts() }
                     </Card.Group>
