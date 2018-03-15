@@ -37,7 +37,7 @@ before_action :set_post, only: [:show, :update, :destroy]
         end 
 
         def post_params
-            params.require(:post).permit(:name, :author, :body)
+            params.require(:post).permit(:title, :author, :body)
         end 
 
 

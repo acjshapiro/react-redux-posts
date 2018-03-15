@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getPosts } from '../actions/posts';
-import { Container, Header, Card, Button } from 'semantic-ui-react';
+import { Container, Header, Card } from 'semantic-ui-react';
 import PostForm from './PostForm';
 
 class Posts extends React.Component {
@@ -10,7 +10,7 @@ class Posts extends React.Component {
 
     posts = () => {
         let { posts } = this.props;
-        let visible = posts;
+       
 
         return this.props.posts.map( post =>
             <Card key={post.id} >

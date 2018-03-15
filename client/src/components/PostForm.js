@@ -4,13 +4,13 @@ import { updatePost, addPost } from '../actions/posts'
 import { Form } from 'semantic-ui-react';
 
 class PostForm extends React.Component {
-  initialState = { 
-    title: '', 
-    author: '', 
-    body: ''
-  }
+//   initialState = { 
+//     title: '', 
+//     author: '', 
+//     body: '',
+//   }
 
-  state = {...this.initialState}
+//   state = {...this.initialState}
 
   componentWillMount() {
     if (this.props.id) 
@@ -28,7 +28,6 @@ class PostForm extends React.Component {
     const { dispatch } = this.props
     const func = this.props.id ? updatePost : addPost
     dispatch(func(post))
-    
   }
 
   render() {
